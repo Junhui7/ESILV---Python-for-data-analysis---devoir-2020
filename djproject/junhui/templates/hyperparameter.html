@@ -1,0 +1,63 @@
+{%  extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--
+chest_ACC_0_mean
+chest_ACC_1_mean
+chest_ACC_2_mean
+chest_ECG_mean
+chest_EMG_mean
+chest_EDA_mean
+chest_Temp_mean
+chest_Resp_mean
+wrist_ACC_0_mean
+wrist_ACC_1_mean
+wrist_ACC_2_mean
+wrist_BVP_mean
+wrist_EDA_mean
+wrist_TEMP_mean
+
+b = [0.909426,
+         -0.084963,
+         -0.168792,
+         0.114459,
+         -1.5,
+         0.0,
+         -273.149688,
+         3.395482,
+         -0.425781,
+         -0.425781,
+         -0.425781,
+         89.281250,
+         2.674739,
+         34.5]
+-->
+<body>
+    {%  block content %}
+    <h1>Hello hyperparemeter</h1>
+
+        <form class="form-row" method="post" action="{% url 'resultat_hyper' %}">
+            {% csrf_token %}
+          <div class="form-group">
+            <label for="exampleFormControlInput1">n_estimators</label>
+            <input type="n_estimators" name="n_estimators" class="form-control" id="exampleFormControlInput1" placeholder="10">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">max_features</label>
+            <input type="max_features" name="max_features" class="form-control" id="exampleFormControlInput1" placeholder="10">
+          </div>
+          <div class="form-group">
+            <label for="exampleFormControlInput1">max_depth</label>
+            <input type="max_depth" name="max_depth" class="form-control" id="exampleFormControlInput1" placeholder="50">
+          </div>
+
+
+          <button type="submit" class="btn btn-primary mb-2">Confirm identity</button>
+        </form>
+    {%  endblock %}
+</body>
+</html>
